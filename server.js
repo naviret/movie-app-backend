@@ -59,26 +59,6 @@ app.get('/login/:email', (req, res) => {
 })
 
 
-// app.get('/register/:user', (req, res) => {
-  
-//   const { user } = req.params;
-//   const collection = db.collection('users');
-//   collection.findOne({ user })
-//   .then(user => {
-//     if (user) {
-//       res.json({ userExists: true});
-//     } else {
-//       res.json({ userExists: false});
-//     }
-//   })
-//   .catch(err => {
-//     console.error('Error fetching user:', err);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   });
-    
-// })
-
-
 app.get('/register/:identifier', (req, res) => {
   
   const { identifier } = req.params;
@@ -154,31 +134,3 @@ app.get("/recommend/:genreId", (req, res) => {
     console.error('Error fetching movie data:', error);
   });
 })
-
-
-// // Get the default connection
-// const db = mongoose.connection;
-
-
-// // Event listeners for connection status
-// db.on('error', console.error.bind(console, 'Connection error:'));
-// db.once('open', () => {
-//   console.log('Connected to the database!');
-
-//   // Create a new document
-//   const newUser = new UserModel({
-//     first: 'John',
-//     last: 'Doe',
-//     email: 'john.doe@example.com',
-//     password: 'password123',
-//   });
-
-//   // Save the document to the database
-//   newUser.save()
-//     .then((result) => {
-//       console.log('Document saved to the database:', result);
-//     })
-//     .catch((error) => {
-//       console.error('Error saving document:', error);
-//     });
-// });
