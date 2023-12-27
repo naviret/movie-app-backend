@@ -6,7 +6,11 @@ const bodyParser = require('body-parser');
 const seedrandom = require('seedrandom');
 
 const UserModel = require('./models/User');
-const { MYPORT, MONGODB_URL, FRONTEND_URL } = require('./config');
+
+const MONGODB_URL =
+	'mongodb+srv://admin:nV6GBeMkI9tunnbW@full-stack-webdev.biknsqq.mongodb.net/?retryWrites=true&w=majority';
+const FRONTEND_URL = 'http://localhost:3000';
+const MYPORT = 4000;
 
 const app = express();
 app.use(bodyParser.json());
