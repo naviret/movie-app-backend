@@ -4,25 +4,21 @@ const { MongoClient } = require('mongodb');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const seedrandom = require('seedrandom');
+require('dotenv').config();
 
 const UserModel = require('./models/User');
-
-const MONGODB_URL =
-	'mongodb+srv://admin:nV6GBeMkI9tunnbW@full-stack-webdev.biknsqq.mongodb.net/?retryWrites=true&w=majority';
-const FRONTEND_URL = 'http://localhost:3000';
-const MYPORT = 4000;
 
 const app = express();
 app.use(bodyParser.json());
 app.use(
 	cors({
-		origin: FRONTEND_URL,
+		origin: process.env.FRONTEND_URI,
 		credentials: true,
 	}),
 );
 
-const port = MYPORT;
-const uri = MONGODB_URL;
+const port = 4000;
+const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 const db = client.db('movie_app');
 
@@ -96,7 +92,7 @@ app.post('/register', (req, res) => {
 		});
 });
 
-const apiKey = '2d5fd30fe1c5d74390fc1900434cb5a8';
+const apiKey = process.env.TMDB_APIKEY;
 
 const shuffle = (array) => {
 	const seed = Date.now();
