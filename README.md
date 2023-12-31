@@ -2,6 +2,8 @@
 
 This repository is the backend for a movie recommendation app built using the `Express` framework, `MongoDB` database, and `Node.js`. This backend also makes use of `TheMovieDatabase` API.
 
+The link to the frontend repository is here: https://github.com/naviret/movie-app-frontend .
+
 This backend implements the endpoints described below.
 
 ## Endpoints
